@@ -8,7 +8,6 @@ use Io\Axoniq\Axonserver\Grpc\Command\CommandProviderOutbound;
 use Io\Axoniq\Axonserver\Grpc\Command\CommandResponse;
 use Io\Axoniq\Axonserver\Grpc\Command\CommandServiceClient;
 use Io\Axoniq\Axonserver\Grpc\Command\CommandSubscription;
-use Io\Axoniq\Axonserver\Grpc\Control\PlatformServiceClient;
 use Io\Axoniq\Axonserver\Grpc\FlowControl;
 use Io\Axoniq\Axonserver\Grpc\SerializedObject;
 
@@ -18,22 +17,10 @@ $commandServiceClient = new CommandServiceClient(
     ]
 );
 
-/*$platformServiceClient = new PlatformServiceClient(
-    'axonserver:8124', [
-        'credentials' => ChannelCredentials::createInsecure(),
-    ]
-);
-$clientIdentification = new \Io\Axoniq\Axonserver\Grpc\Control\ClientIdentification();
-$clientIdentification->setClientId('Greeting');
-$clientIdentification->setComponentName('Greeting');
-var_dump($platformServiceClient->GetPlatformServer($clientIdentification)->wait());
-$stream = $platformServiceClient->OpenStream();*/
-
 $commandSubscription = new CommandSubscription();
 $commandSubscription->setClientId('ReceivingServer');
 $commandSubscription->setComponentName('ReceivingServer');
 $commandSubscription->setCommand('Greeting');
-//$commandSubscription->setMessageId('Greeting');
 
 $flowControl = new FlowControl();
 $flowControl->setClientId('ReceivingServer');

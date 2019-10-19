@@ -6,8 +6,6 @@ use Grpc\ChannelCredentials;
 use Io\Axoniq\Axonserver\Grpc\Command\Command;
 use Io\Axoniq\Axonserver\Grpc\Command\CommandResponse;
 use Io\Axoniq\Axonserver\Grpc\Command\CommandServiceClient;
-use Io\Axoniq\Axonserver\Grpc\MetaDataValue;
-use Io\Axoniq\Axonserver\Grpc\ProcessingInstruction;
 use Io\Axoniq\Axonserver\Grpc\SerializedObject;
 
 $commandServiceClient = new CommandServiceClient(
