@@ -1,0 +1,27 @@
+{
+    "name": "dnna/axon-php-client",
+    "type": "library",
+    "description": "PHP Client for Axon Server",
+    "keywords": ["axoniq", "axon", "queue", "cqrs"],
+    "homepage": "https://github.com/dnna/axon-php-client",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dimosthenis Nikoudis",
+            "email": "dnna@dnna.gr"
+        }
+    ],
+    "require": {
+        "ext-grpc": "*",
+        "grpc/grpc": "1.22",
+        "google/protobuf": "3.8.0"
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "autoload": {
+        "psr-0": { "Dnna\\Axon": "src" },
+        "psr-4": { "Io\\": "src/AxonProtos/Io", "GPBMetadata\\": "src/AxonProtos/GPBMetadata" }
+    },
+    "target-dir": "Dnna/Axon"
+}
