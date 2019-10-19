@@ -22,6 +22,5 @@
     "autoload": {
         "psr-0": { "Dnna\\Axon": "src" },
         "psr-4": { "Io\\": "src/AxonProtos/Io", "GPBMetadata\\": "src/AxonProtos/GPBMetadata" }
-    },
-    "target-dir": "Dnna/Axon"
+    }
 }
