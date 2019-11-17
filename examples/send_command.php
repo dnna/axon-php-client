@@ -1,6 +1,6 @@
 <?php /** @noinspection PhpComposerExtensionStubsInspection */
 
-require('vendor/autoload.php');
+require('/app-vendor/autoload.php');
 
 use Grpc\ChannelCredentials;
 use Io\Axoniq\Axonserver\Grpc\Command\Command;

@@ -1,6 +1,6 @@
 <?php /** @noinspection PhpComposerExtensionStubsInspection */
 
-require('vendor/autoload.php');
+require('/app-vendor/autoload.php');
 
 use Grpc\ChannelCredentials;
 use Io\Axoniq\Axonserver\Grpc\Query\QueryRequest;
@@ -17,10 +17,10 @@ $queryServiceClient = new QueryServiceClient(
 $query = new QueryRequest();
 $query->setClientId('Greeting');
 $query->setComponentName('Greeting');
-$query->setQuery('GreetingQuery');
+$query->setQuery('/accounts/{id}');
 
 $srl = new SerializedObject();
-$srl->setData('THIS IS A PAYLOAD');
+$srl->setData(json_encode(['id' => 'acc-56d7fe42-0651-4b94-83ee-8ca5f116a22c']));
 $query->setPayload($srl);
 
 foreach($queryServiceClient->Query($query)->responses() as $reply) {
